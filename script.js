@@ -1,10 +1,18 @@
 const input = document.getElementById('carta-texto'); // [3]
 const createLetterButton = document.getElementById('criar-carta'); // [3]
 const generatedLetter = document.getElementById('carta-gerada'); // [3]
+const cartaContador = document.getElementById('carta-contador'); // 18
 const estilo = ['newspaper', 'magazine1', 'magazine2'];
 const tamanho = ['medium', 'big', 'reallybig'];
 const rotacao = ['rotateleft', 'rotateright'];
 const inclinacao = ['skewleft', 'skewright'];
+
+// 18
+function contadorDeFrases() {
+  const todosSpan = generatedLetter.children;
+  const quantidadeSpan = todosSpan.length;
+  cartaContador.innerText = quantidadeSpan;
+}
 
 // [16]
 function sorteia(numero) {
@@ -50,6 +58,7 @@ function createLetter() {
       span.innerText = values[index];
       adicionaClasse(span);
       generatedLetter.appendChild(span);
+      contadorDeFrases();
     }
   }
 }
