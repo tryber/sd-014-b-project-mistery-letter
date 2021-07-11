@@ -1,6 +1,6 @@
 .newspaper {
   background-color: antiquewhite;
-  font-family: 'Times New Roman';
+  font-family: Times New Roman;
   font-weight: bold;
 }
 
@@ -49,9 +49,3 @@
 .skewright {
   transform: skewX(-10deg);
 }
-
-
-
-
-
-
