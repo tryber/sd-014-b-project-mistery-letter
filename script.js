@@ -1,12 +1,14 @@
 const cartaGerada = document.getElementById('carta-gerada');
-let style = ['newspaper', 'magazine1', 'magazine2'];
-let size = ['medium', 'big', 'reallybig'];
-let rotate = ['rotateleft', 'rotateright'];
-let skew = ['skewleft', 'skewright'];
+const cartaContador = document.getElementById('carta-contador');
+const style = ['newspaper', 'magazine1', 'magazine2'];
+const size = ['medium', 'big', 'reallybig'];
+const rotate = ['rotateleft', 'rotateright'];
+const skew = ['skewleft', 'skewright'];
 function criarCarta() {
   cartaGerada.innerText = '';
   const input = document.getElementById('carta-texto').value;
   const splited = input.split(' ');
+  cartaContador.innerText = splited.length;
   if (splited[0] === '') {
     cartaGerada.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
@@ -24,4 +26,3 @@ function criarCarta() {
 
 const buttonCriarCarta = document.getElementById('criar-carta');
 buttonCriarCarta.addEventListener('click', criarCarta);
-
