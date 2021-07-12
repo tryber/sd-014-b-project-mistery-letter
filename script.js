@@ -24,6 +24,21 @@ const buttonSelect = document.querySelector('#criar-carta');
 # Cada palavra deve aparecer dentro de uma tag `span`.
 # As tags `span` devem ser adicionadas como filhas do parágrafo que possui o id `carta-gerada`.
 */
+function generationClass() {
+  const number1 = Math.floor(Math.random() * 3);
+  const number2 = Math.floor(Math.random() * 2);
+  let classString = '';
+  const estilo = ['newspaper', 'magazine1', 'magazine2'];
+  const tamanho = ['medium', 'big', 'reallybig'];
+  classString += ' ' + estilo[number1];
+  classString += ' ' + tamanho[number1];
+  const rotacao = ['rotateleft', 'rotateright'];
+  const inclinacao = ['skewleft', 'skewright'];
+  classString += ' ' + rotacao[number2];
+  classString += ' ' + inclinacao[number2];
+  return classString.trim();
+}
+
 function adicionaSpan() {
   const stringLetter = inputSelect.value;
   const objectLetter = stringLetter.split(' ');
@@ -43,34 +58,19 @@ function addSpan() {
     adicionaSpan();
   }
 }
+buttonSelect.addEventListener('click', addSpan);
 
-function generationClass() {
-  const number1 = Math.floor(Math.random() * 3);
-  const number2 = Math.floor(Math.random() * 2);
-  let classString = '';
-  const estilo = ['newspaper', 'magazine1', 'magazine2'];
-  const tamanho = ['medium', 'big', 'reallybig'];
-  classString += ' ' + estilo[number1];
-  classString += ' ' + tamanho[number1];
-  const rotacao = ['rotateleft', 'rotateright'];
-  const inclinacao = ['skewleft', 'skewright'];
-  classString += ' ' + rotacao[number2];
-  classString += ' ' + inclinacao[number2];
-  return classString.trim();
+function contadorLetter() {
+  const paragraphContador = document.querySelector('#carta-contador');
+  const textInput = inputSelect.value.split(' ');
+  if (paragraphContador === null) {
+    const newParagraphCreate = document.createElement('p');
+    newParagraphCreate.setAttribute('id', 'carta-contador');
+    newParagraphCreate.innerText = textInput.length;
+    selectionSelect.appendChild(newParagraphCreate);
+  } else {
+    paragraphContador.innerText = textInput.length;
+  }
 }
 
-console.log(generationClass());
-// const spanSelect = document.querySelectorAll('span');
-
-// function addClass() {
-//   for (let index = 0; index < spanSelect.length; index += 1) {
-//     if (spanSelect.length > 0) {
-//       const newClass = generationClass();
-//       const span = spanSelect[index];
-//       span.classList = newClass;
-//     }
-//   }
-// }
-
-buttonSelect.addEventListener('click', addSpan);
-// buttonSelect.addEventListener('click', addClass);
+buttonSelect.addEventListener('click', contadorLetter);
