@@ -4,13 +4,7 @@ const letterGeneratorBtn = document.getElementById('criar-carta');
 let typedText = '';
 
 function getInput(event) {
-  let spaceCounter = 0;
-  for (let index = 0; index < event.target.value.length; index += 1) {
-    spaceCounter += 1;
-  }
   if (event.target.value === '' || event.target.value === ' ') {
-    generatedLetter.innerText = 'Por favor, digite o conteúdo da carta.';
-  } else if (spaceCounter === event.target.value.length) {
     generatedLetter.innerText = 'Por favor, digite o conteúdo da carta.';
   } else {
     generatedLetter.innerText = '';
