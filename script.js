@@ -24,25 +24,22 @@ const buttonSelect = document.querySelector('#criar-carta');
 # Cada palavra deve aparecer dentro de uma tag `span`.
 # As tags `span` devem ser adicionadas como filhas do parágrafo que possui o id `carta-gerada`.
 */
+function adicionaSpan() {
+  const stringLetter = inputSelect.value;
+  const objectLetter = stringLetter.split(' ');
+  for (let index = 0; index < objectLetter.length; index += 1) {
+    const spanCreate = document.createElement('span');
+    spanCreate.innerText = objectLetter[index];
+    paragraphSelect.appendChild(spanCreate);
+  }
+}
 
 function addSpan() {
   if (inputSelect.value.length > 1 && paragraphSelect.children.length === 0) {
-    const stringLetter = inputSelect.value;
-    const objectLetter = stringLetter.split(' ');
-    for (let index = 0; index < objectLetter.length; index += 1) {
-      const spanCreate = document.createElement('span');
-      spanCreate.innerText = objectLetter[index];
-      paragraphSelect.appendChild(spanCreate);
-    }
+    adicionaSpan();
   } else {
     paragraphSelect.innerText = '';
-    const stringLetter = inputSelect.value;
-    const objectLetter = stringLetter.split(' ');
-    for (let index = 0; index < objectLetter.length; index += 1) {
-      const spanCreate = document.createElement('span');
-      spanCreate.innerText = objectLetter[index];
-      paragraphSelect.appendChild(spanCreate);
-    }
+    adicionaSpan();
   }
 }
 
