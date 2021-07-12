@@ -6,6 +6,7 @@ const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
 const sizeGroup = ['medium', 'big', 'reallybig'];
 const rotationGroup = ['rotateleft', 'rotateright'];
 const inclinationGroup = ['skewleft', 'skewright'];
+const wordsCounter = document.getElementById('carta-contador');
 
 function getInput(event) {
   if (event.target.value === '' || event.target.value === ' ') {
@@ -14,17 +15,6 @@ function getInput(event) {
     generatedLetter.innerText = '';
     typedText = event.target.value;
   }
-}
-
-function createSpan() {
-  const stringArr = typedText.split(' ');
-  for (let index = 0; index < stringArr.length; index += 1) {
-    const createdSpan = document.createElement('span');
-    createdSpan.innerText = stringArr[index];
-    generatedLetter.appendChild(createdSpan);
-  }
-  decorateStyleSize();
-  decorateRotationInclination();
 }
 
 function decorateStyleSize() {
@@ -36,12 +26,25 @@ function decorateStyleSize() {
 }
 
 function decorateRotationInclination() {
-  const randomNumber = Math.floor(Math.random() * 2);
   for (let index = 0; index < generatedLetter.children.length; index += 1) {
     const randomNumber = Math.floor(Math.random() * 2);
     generatedLetter.children[index].classList.add(rotationGroup[randomNumber]);
     generatedLetter.children[index].classList.add(inclinationGroup[randomNumber]);
   }
+}
+
+function createSpan() {
+  const stringArr = typedText.split(' ');
+  let numberOfWords = 0;
+  for (let index = 0; index < stringArr.length; index += 1) {
+    const createdSpan = document.createElement('span');
+    createdSpan.innerText = stringArr[index];
+    generatedLetter.appendChild(createdSpan);
+    numberOfWords += 1;
+  }
+  wordsCounter.innerText = numberOfWords;
+  decorateStyleSize();
+  decorateRotationInclination();
 }
 
 letterGeneratorBtn.addEventListener('click', createSpan);
