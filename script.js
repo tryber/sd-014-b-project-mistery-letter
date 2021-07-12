@@ -1,4 +1,3 @@
-const input = document.querySelector('#carta-texto');
 const carta = document.querySelector('#carta-gerada');
 const botao = document.querySelector('#criar-carta');
 const cartaContador = document.querySelector('#carta-contador');
