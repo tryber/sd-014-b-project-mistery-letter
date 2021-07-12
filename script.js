@@ -30,6 +30,7 @@ function adicionaSpan() {
   for (let index = 0; index < objectLetter.length; index += 1) {
     const spanCreate = document.createElement('span');
     spanCreate.innerText = objectLetter[index];
+    spanCreate.classList = generationClass();
     paragraphSelect.appendChild(spanCreate);
   }
 }
@@ -43,4 +44,33 @@ function addSpan() {
   }
 }
 
+function generationClass() {
+  const number1 = Math.floor(Math.random() * 3);
+  const number2 = Math.floor(Math.random() * 2);
+  let classString = '';
+  const estilo = ['newspaper', 'magazine1', 'magazine2'];
+  const tamanho = ['medium', 'big', 'reallybig'];
+  classString += ' ' + estilo[number1];
+  classString += ' ' + tamanho[number1];
+  const rotacao = ['rotateleft', 'rotateright'];
+  const inclinacao = ['skewleft', 'skewright'];
+  classString += ' ' + rotacao[number2];
+  classString += ' ' + inclinacao[number2];
+  return classString.trim();
+}
+
+console.log(generationClass());
+// const spanSelect = document.querySelectorAll('span');
+
+// function addClass() {
+//   for (let index = 0; index < spanSelect.length; index += 1) {
+//     if (spanSelect.length > 0) {
+//       const newClass = generationClass();
+//       const span = spanSelect[index];
+//       span.classList = newClass;
+//     }
+//   }
+// }
+
 buttonSelect.addEventListener('click', addSpan);
+// buttonSelect.addEventListener('click', addClass);
