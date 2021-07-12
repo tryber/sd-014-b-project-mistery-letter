@@ -19,6 +19,21 @@
   color: darkgray;
 }
 
+button {
+  margin: 5px;
+  padding: 5px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border-radius: 10%;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+  width: 50%;
+}
+
 .newspaper {
   background-color: antiquewhite;
   font-family: 'Times New Roman', Times, serif;
