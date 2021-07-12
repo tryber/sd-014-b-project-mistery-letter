@@ -26,7 +26,16 @@ const buttonSelect = document.querySelector('#criar-carta');
 */
 
 function addSpan() {
-  if (inputSelect.value.length > 1) {
+  if (inputSelect.value.length > 1 && paragraphSelect.children.length === 0) {
+    const stringLetter = inputSelect.value;
+    const objectLetter = stringLetter.split(' ');
+    for (let index = 0; index < objectLetter.length; index += 1) {
+      const spanCreate = document.createElement('span');
+      spanCreate.innerText = objectLetter[index];
+      paragraphSelect.appendChild(spanCreate);
+    }
+  } else {
+    paragraphSelect.innerText = '';
     const stringLetter = inputSelect.value;
     const objectLetter = stringLetter.split(' ');
     for (let index = 0; index < objectLetter.length; index += 1) {
