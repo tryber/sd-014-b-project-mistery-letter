@@ -4,13 +4,18 @@ const letterGeneratorBtn = document.getElementById('criar-carta');
 let typedText = '';
 
 function getInput(event) {
-  typedText = event.target.value;
+  if (event.target.value === '' || event.target.value === ' ') {
+    generatedLetter.innerText = 'Por favor, digite o conteúdo da carta.';
+  } else {
+    generatedLetter.innerText = '';
+    typedText = event.target.value;
+  }
 }
 
 function createSpan() {
-  const stringArr = typedText.split(" ");
+  const stringArr = typedText.split(' ');
   for (let index = 0; index < stringArr.length; index += 1) {
-    let createdSpan = document.createElement('span');
+    const createdSpan = document.createElement('span');
     createdSpan.innerText = stringArr[index];
     generatedLetter.appendChild(createdSpan);
   }
