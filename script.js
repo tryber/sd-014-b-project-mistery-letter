@@ -33,10 +33,11 @@ function inputInSpan(input) {
 }
 
 // Stylizes spans
-function stylizeSpans() {
+function stylizeSpans(input) {
   let allSpans = queryAll('.style-this');
   for (let i = 0; i < input.length; i++){
     // alocar um estilo a cada span aleatoriamente
+    console.log('ola');
   }
 }
 
