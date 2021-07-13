@@ -6,6 +6,10 @@ const letterInput = query('#carta-texto'); // input
 const finalizedLetter = query('#carta-gerada'); // texto gerado
 const letterButton = query('#criar-carta'); // botão
 const numberCount = query('#word-number'); // h4
+const styleGroup = ['newspaper', 'magazine1', 'magazine2']; // classes tipo 1
+const sizeGroup = ['medium', 'big', 'reallybig']; // classes tipo 2
+const rotationGroup = ['rotateleft', 'rotateright']; // classes tipo 3
+const inclinationGroup = ['skewleft', 'skewright']; // classes tipo 4
 
 // FUNCTIONS
 
@@ -14,9 +18,9 @@ const numberCount = query('#word-number'); // h4
 function countInput(input) {
   let count = 0;
   input.forEach(() => { count++; });
-  console.log(count);
   let countSpan = document.createElement('span');
   countSpan.innerText = count;
+  numberCount.innerHTML = '';
   numberCount.appendChild(countSpan);
   return count
 }
@@ -32,12 +36,17 @@ function inputInSpan(input) {
   }
 }
 
-// Stylizes spans
-function stylizeSpans(input) {
-  let allSpans = queryAll('.style-this');
-  for (let i = 0; i < input.length; i++){
-    // alocar um estilo a cada span aleatoriamente
-    console.log('ola');
+function stylizeSpans() {
+  let spans = queryAll('.style-this');
+  for (let i=0; i < spans.length; i++){
+    let randomNumber3 = Math.floor(Math.random() * 3);
+    let style = styleGroup[randomNumber3];
+    let size = sizeGroup[randomNumber3]; 
+    let randomNumber2 = Math.floor(Math.random() * 2);
+    let rotation = inclinationGroup[randomNumber2];
+    let inclination = rotationGroup[randomNumber2]; 
+    let currentSpan = spans[i];
+    currentSpan.classList.add(style, size, rotation, inclination);
   }
 }
 
@@ -45,12 +54,14 @@ function stylizeSpans(input) {
 
 letterButton.addEventListener ('click', (event)=>{
   // Alert if nothing is typed
+  let oldLetter = query('#carta-gerada');
+  oldLetter.innerHTML = '';
   if (letterInput.value === '' || letterInput.value[0] === ' '){
     window.alert('Por favor, digite o conteúdo da carta.');
   } else {
   let splittedInput = letterInput.value.split(' ');
   countInput(splittedInput);
   inputInSpan(splittedInput);
-  stylizeSpans(splittedInput);
+  stylizeSpans();
   }
 });
