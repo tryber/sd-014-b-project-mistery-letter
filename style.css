@@ -2,3 +2,9 @@
   padding: 0;
   margin: 0;
 }
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
