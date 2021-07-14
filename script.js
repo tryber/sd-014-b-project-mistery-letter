@@ -16,7 +16,6 @@ function stylizeSpans() {
 
   // Get all span elements (class style-this only)
   let spans = queryAll('.style-this');
-  
   // Attribute rotation OR inclination to each span
   for (let i=0; i < spans.length; i++){
     let spanNow = spans[i];
@@ -63,7 +62,7 @@ function inputInSpan(input) {
   let paragraph = query('#carta-gerada');
   for (let i = 0; i < input.length; i++){
     let createSpan = document.createElement('span');
-    let spanText = document.createTextNode(`${input[i]}`+' ');
+    let spanText = document.createTextNode(`${input[i]}`);
     createSpan.appendChild(spanText);
     createSpan.classList.add('style-this');
     paragraph.appendChild(createSpan);
@@ -80,7 +79,7 @@ letterButton.addEventListener ('click', (event)=>{
     oldLetter.innerText = "Por favor, digite o conteúdo da carta.";
   } else {
   let splittedInput = letterInput.value.split(' ');
-  let wordCount = countInput(splittedInput);
+  countInput(splittedInput);
   inputInSpan(splittedInput);
   stylizeSpans();
   }
