@@ -57,3 +57,6 @@ input {
   transform: matrix(1, 0, -0.176327, 1, 0, 0);
 }
 
+#carta-gerada {
+  text-align: center;
+}
