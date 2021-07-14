@@ -9,7 +9,7 @@ const styleGroup = ['newspaper', 'magazine1', 'magazine2']; // classes tipo 1
 const sizeGroup = ['medium', 'big', 'reallybig']; // classes tipo 2
 const rotationGroup = ['rotateleft', 'rotateright']; // classes tipo 3
 const inclinationGroup = ['skewleft', 'skewright']; // classes tipo 4
-
+console.log('TESTE COMMIT');
 // FUNCTIONS
 
 function stylizeSpans() {
@@ -71,6 +71,7 @@ function inputInSpan(input) {
 
 // EVENTLISTENERS
 
+// Button to generate 'letter'
 letterButton.addEventListener ('click', (event)=>{
   // Alert if nothing is typed
   let oldLetter = query('#carta-gerada');
