@@ -17,6 +17,10 @@ function generate() {
     }
   }
   spanCreator();
+  if (arr[0] === '' || arr[0] === undefined) {
+    generatedText.innerText = 'Por favor, digite o conteúdo da carta.';
+    console.log('oi');
+  }
 }
 
 generateButton.addEventListener('click', generate);
