@@ -4,14 +4,14 @@ header {
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: 'Times New Roman';
-  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold 1px;
 }
 
 .magazine1 {
   background-color: teal;
   color: white;
-  font-family: Verdana;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -19,7 +19,7 @@ header {
 .magazine2 {
   background-image: url('images/pink-pattern.png');
   color: fuchsia;
-  font-family: Verdana;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
 }
 
@@ -44,4 +44,12 @@ header {
 
 .rotateright {
   transform: rotate(5deg);
+}
+
+.skewleft {
+    transform: skewX(10deg);
+}
+
+.skewright {
+    transform: skewX(-10deg);
 }
