@@ -24,3 +24,55 @@ function generate() {
 }
 
 generateButton.addEventListener('click', generate);
+
+// função para style group
+
+function styleclass(event) {
+  const styleGroup = ['', 'newspaper', 'magazine1', 'magazine2'];
+  const eventStyle = event.target;
+  let styleNumber = Math.random() * 3 + 1;
+  styleNumber = Math.round(styleNumber);
+  console.log(styleNumber);
+  eventStyle.classList.add(styleGroup[styleNumber]);
+}
+
+// função para size group
+
+function sizeClass(event) {
+  const sizeGroup = ['', 'medium', 'big', 'reallybig'];
+  const sizeStyle = event.target;
+  let sizeNumber = Math.random() * 3 + 1;
+  sizeNumber = Math.round(sizeNumber);
+  console.log(sizeNumber);
+  sizeStyle.classList.add(sizeGroup[sizeNumber]);
+}
+
+// função para rotation group
+
+function rotationClass(event) {
+  const rotationGroup = ['', 'rotateleft', 'rotateright'];
+  const rotationStyle = event.target;
+  let rotationNumber = Math.random() * 3 + 1;
+  rotationNumber = Math.round(rotationNumber);
+  console.log(rotationNumber);
+  rotationStyle.classList.add(rotationGroup[rotationNumber]);
+}
+
+// Função para inclinação
+
+function inclinationClass(event) {
+  const inclinationGroup = ['', 'skewleft', 'skewright'];
+  const inclinationStyle = event.target;
+  let inclinationNumber = Math.random() * 3 + 1;
+  inclinationNumber = Math.round(inclinationNumber);
+  console.log(inclinationNumber);
+  inclinationStyle.classList.add(inclinationGroup[inclinationNumber]);
+}
+
+function styleSet(event) {
+  styleclass(event);
+  sizeClass(event);
+  rotationClass(event);
+  inclinationClass(event);
+}
+generatedText.addEventListener('click', styleSet);
