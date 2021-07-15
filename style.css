@@ -4,7 +4,7 @@ header {
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Times New Roman, Times, serif;
   font-weight: 700;
 }
 
@@ -52,4 +52,12 @@ header {
 
 .skewright {
   transform: skewX(-10deg);
+}
+
+span {
+  margin: 40px;
+}
+
+#carta-gerada {
+  text-align: center;
 }

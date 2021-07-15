@@ -4,14 +4,19 @@ const textInput = document.querySelector('#carta-texto');
 const generatedText = document.querySelector('#carta-gerada');
 const counter = document.querySelector('#carta-contador');
 
+// função para criar spans
 function generate() {
-  if (textInput.value[0] === undefined || textInput.value[0] === ' ') {
-    generatedText.innerText = 'Por favor, digite o conteúdo da carta.';
-  }
   const arr = textInput.value.split(' ');
   counter.innerText = arr.length;
+  function spanCreator() {
+    document.querySelector('#carta-gerada').innerHTML = '';
+    for (let index = 0; index <= arr.length - 1; index += 1) {
+      const lineSpan = document.createElement('span');
+      document.querySelector('#carta-gerada').appendChild(lineSpan);
+      lineSpan.innerText = arr[index];
+    }
+  }
+  spanCreator();
 }
 
 generateButton.addEventListener('click', generate);
-
-// função para receber e tratar o input separando em uma array
