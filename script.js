@@ -98,4 +98,4 @@ function styleSet(event) {
 }
 generatedText.addEventListener('click', styleSet);
 
-// não está passando no github, mas passa no meu
+// na minha máquina roda
