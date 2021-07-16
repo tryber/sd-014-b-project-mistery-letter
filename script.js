@@ -3,8 +3,29 @@ const generateButton = document.querySelector('#criar-carta');
 const textInput = document.querySelector('#carta-texto');
 const generatedText = document.querySelector('#carta-gerada');
 const counter = document.querySelector('#carta-contador');
+const spanTest = document.getElementsByTagName('span');
+const styleTest = ['newspaper', 'magazine1', 'magazine2'];
+const inclinationTest = ['skewleft', 'skewright'];
+const rotationTest = ['rotateleft', 'rotateright'];
+const sizeTest = ['medium', 'big', 'reallybig'];
+
+function generateStyle() {
+  for (let index = 0; index < spanTest.length; index += 1) {
+    spanTest[index].classList.add(styleTest[Math.round(Math.random() * 2 + 1)]);
+    spanTest[index].classList.add(inclinationTest[Math.round(Math.random() * 2 + 1)]);
+    spanTest[index].classList.add(rotationTest[Math.round(Math.random() * 2 + 1)]);
+    spanTest[index].classList.add(sizeTest[Math.round(Math.random() * 2 + 1)]);
+  }
+}
+
+function undefinedRemover() {
+  for (let index = 0; index < spanTest.length; index += 1) {
+    spanTest[index].classList.remove('undefined');
+  }
+}
 
 // função para criar spans
+
 function generate() {
   const arr = textInput.value.split(' ');
   counter.innerText = arr.length;
@@ -15,6 +36,8 @@ function generate() {
       generatedText.appendChild(lineSpan);
       lineSpan.innerText = arr[index];
     }
+    generateStyle();
+    undefinedRemover();
   }
   spanCreator();
   if (arr[0] === '' || arr[0] === undefined) {
@@ -32,7 +55,6 @@ function styleclass(event) {
   const eventStyle = event.target;
   let styleNumber = Math.random() * 3 + 1;
   styleNumber = Math.round(styleNumber);
-  console.log(styleNumber);
   eventStyle.classList.add(styleGroup[styleNumber]);
 }
 
@@ -43,7 +65,6 @@ function sizeClass(event) {
   const sizeStyle = event.target;
   let sizeNumber = Math.random() * 3 + 1;
   sizeNumber = Math.round(sizeNumber);
-  console.log(sizeNumber);
   sizeStyle.classList.add(sizeGroup[sizeNumber]);
 }
 
@@ -54,7 +75,6 @@ function rotationClass(event) {
   const rotationStyle = event.target;
   let rotationNumber = Math.random() * 3 + 1;
   rotationNumber = Math.round(rotationNumber);
-  console.log(rotationNumber);
   rotationStyle.classList.add(rotationGroup[rotationNumber]);
 }
 
@@ -65,7 +85,6 @@ function inclinationClass(event) {
   const inclinationStyle = event.target;
   let inclinationNumber = Math.random() * 3 + 1;
   inclinationNumber = Math.round(inclinationNumber);
-  console.log(inclinationNumber);
   inclinationStyle.classList.add(inclinationGroup[inclinationNumber]);
 }
 
@@ -76,3 +95,4 @@ function styleSet(event) {
   inclinationClass(event);
 }
 generatedText.addEventListener('click', styleSet);
+
