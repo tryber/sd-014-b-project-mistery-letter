@@ -12,8 +12,8 @@ const sizeTest = ['medium', 'big', 'reallybig'];
 function generateStyle() {
   for (let index = 0; index < spanTest.length; index += 1) {
     spanTest[index].classList.add(styleTest[Math.round(Math.random() * 2 + 1)]);
-    spanTest[index].classList.add(inclinationTest[Math.round(Math.random() * 2 + 1)]);
-    spanTest[index].classList.add(rotationTest[Math.round(Math.random() * 2 + 1)]);
+    spanTest[index].classList.add(inclinationTest[Math.round(Math.random() + 1)]);
+    spanTest[index].classList.add(rotationTest[Math.round(Math.random() + 1)]);
     spanTest[index].classList.add(sizeTest[Math.round(Math.random() * 2 + 1)]);
   }
 }
