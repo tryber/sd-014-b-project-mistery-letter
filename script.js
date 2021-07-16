@@ -1,6 +1,12 @@
 const cartaTexto = document.querySelector("#carta-texto");
 const cartaGerada = document.querySelector("#carta-gerada");
 const criarCarta = document.querySelector("#criar-carta");
+const spanTag = document.querySelectorAll('span');
+const cartaContador = document.querySelector('#carta-contador');
+const style = ['newspaper', 'magazine1', 'magazine2'];
+const size = ['medium', 'big', 'reallybig'];
+const rotation = ['rotateleft', 'rotateright'];
+const slope = ['skewleft', 'skewright'];
 
 function getLetterText() {
   let getText = cartaTexto.value;
@@ -26,3 +32,53 @@ function lookEmptySpaces() {
 }
 
 criarCarta.addEventListener('click', lookEmptySpaces)
+
+/* const style = ['newspapper', 'magazine1', 'magazine2'];
+const size = ['medium', 'big', 'reallybig'];
+const rotation = ['rotateleft', 'rotateright'];
+const slope = ['skewleft', 'skewright']; */
+
+function styleClass() {
+  let span = document.querySelectorAll('span');
+  for (let index of span) {
+    index.classList.add(style[Math.floor(Math.random() * 3)]);
+  }
+}
+
+criarCarta.addEventListener('click', styleClass);
+
+function sizeClass() {
+  let span = document.querySelectorAll('span');
+  for (let index of span) {
+    index.classList.add(size[Math.floor(Math.random() * 3)]);
+  }
+}
+
+criarCarta.addEventListener('click', sizeClass);
+
+function rotationClass() {
+  let span = document.querySelectorAll('span');
+  for (let index of span) {
+    index.classList.add(rotation[Math.floor(Math.random() * 2)]);
+  }
+}
+
+criarCarta.addEventListener('click', rotationClass);
+
+function slopeClass() {
+  let span = document.querySelectorAll('span');
+  for (let index of span) {
+    index.classList.add(slope[Math.floor(Math.random() * 2)]);
+  }
+}
+
+criarCarta.addEventListener('click', slopeClass);
+
+function numberOfWords() {
+  let span = document.querySelectorAll('span');
+  let spanLenght = span.length;
+  let parse = parseInt(spanLenght, 10);
+  cartaContador.innerHTML = parse;
+}
+
+criarCarta.addEventListener('click', numberOfWords);
