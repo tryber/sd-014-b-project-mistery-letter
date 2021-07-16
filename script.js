@@ -88,6 +88,8 @@ function inclinationClass(event) {
   inclinationStyle.classList.add(inclinationGroup[inclinationNumber]);
 }
 
+// função que altera as palavras
+
 function styleSet(event) {
   styleclass(event);
   sizeClass(event);
