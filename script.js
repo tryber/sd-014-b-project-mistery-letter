@@ -75,10 +75,10 @@ function slopeClass() {
 criarCarta.addEventListener('click', slopeClass);
 
 function numberOfWords() {
+  let contador = document.querySelector('#carta-contador')
   let span = document.querySelectorAll('span');
-  let spanLenght = span.length;
-  let parse = parseInt(spanLenght, 10);
-  cartaContador.innerHTML = parse;
+  let number = parseInt(span.length);
+  return contador.innerHTML = number;
 }
 
 criarCarta.addEventListener('click', numberOfWords);

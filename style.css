@@ -54,3 +54,11 @@
 .skewright {
   transform: skewX(-10deg);
 }
+
+#carta-gerada {
+  margin-top: 40px;
+}
+
+#carta-contador {
+  margin-top: 40px;
+}
