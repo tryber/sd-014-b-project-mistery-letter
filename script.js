@@ -95,4 +95,3 @@ function styleSet(event) {
   inclinationClass(event);
 }
 generatedText.addEventListener('click', styleSet);
-
