@@ -1,7 +1,7 @@
 let input = document.getElementById('carta-texto');
 let btnCriarCarta = document.getElementById('criar-carta');
 let p = document.getElementById('carta-gerada');
-let pContador = document.getElementById('contador');
+let pContador = document.getElementById('carta-contador');
 let carta = document.getElementById('carta');
 
 // Limpa os campos span e contador para gerar uma nova frase
