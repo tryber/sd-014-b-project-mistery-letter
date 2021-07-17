@@ -69,6 +69,18 @@ function generatorLetter() {
   generatorSpan(letter);
 }
 
+function changeClasses() {
+  const spans = document.querySelectorAll('span');
+  spans.forEach((span) => {
+    const element = span;
+    element.className = mountClass();
+  });
+}
+
 const buttonGeneratorLetter = document.querySelector('#criar-carta');
 
 buttonGeneratorLetter.addEventListener('click', generatorLetter);
+
+const changeClass = document.getElementById('carta-gerada');
+
+changeClass.addEventListener('click', changeClasses);
