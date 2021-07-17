@@ -54,9 +54,7 @@ function gerarCarta() {
 function contadorPalavras() {
   let span = document.querySelectorAll('#span');
   let contador = span.length;
-  pContador = document.createElement('p');
   pContador.innerHTML = contador;
-  carta.appendChild(pContador);
 }
 // Adiciona classe as palavras
 function addClass() {
