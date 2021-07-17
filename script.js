@@ -4,7 +4,7 @@ let p = document.getElementById('carta-gerada');
 let pContador = document.getElementById('contador');
 let carta = document.getElementById('carta');
 
-// Limpa os campos span para gerar uma nova frase
+// Limpa os campos span e contador para gerar uma nova frase
 function limparCarta () {
   p.innerHTML = '';
   pContador.innerHTML = '';

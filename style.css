@@ -38,7 +38,7 @@
   transform: rotate(-5deg);
 }
 
-.rotaterigth {
+.rotateright {
   transform: rotate(5deg);
 }
 
@@ -46,6 +46,6 @@
   transform: skewX(10deg);
 }
 
-.skewrigth {
+.skewright {
   transform: skewX(-10deg);
 }
