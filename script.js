@@ -33,13 +33,21 @@ function gerarCarta() {
     } else {
       addWord = document.createElement('span');
       addWord.innerHTML = palavra;
+      addWord.id = 'span';
       p.appendChild(addWord);
       palavra = '';
     }
   }
   addWord = document.createElement('span');
   addWord.innerHTML = palavra;
+  addWord.id = 'span';
   p.appendChild(addWord);
+  addClass();
+}
+
+// Adiciona classe as palavras
+function addClass() {
+  let span = document.querySelectorAll('#span');
+  console.log(span);
 }
 btnCriarCarta.addEventListener('click', limparCarta);
-
