@@ -6,6 +6,7 @@ let lengthStyles = styles.length;
 function erro() {
   let paragrafo = document.querySelector("#carta-gerada");
   let valorRecebido = input.value;
+  document.querySelector("#carta-gerada").innerHTML = '';
   if (valorRecebido == '' || valorRecebido.trim() == '') {
     paragrafo.innerText = 'Por favor, digite o conteúdo da carta.'
   }
@@ -14,7 +15,6 @@ function erro() {
 button.addEventListener("click", erro);
 
 function criarCarta() {
-  document.querySelector("#carta-gerada").innerHTML = '';
   let valorRecebido = input.value;
   let palavras = valorRecebido.split(" ");
   console.log(palavras);
