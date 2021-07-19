@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
+/* eslint-disable complexity */
+/* eslint-disable max-lines-per-function */
 let input = document.getElementById('carta-texto');
 let btnCriarCarta = document.getElementById('criar-carta');
 let p = document.getElementById('carta-gerada');
 let pContador = document.getElementById('carta-contador');
-let carta = document.getElementById('carta');
 
 // Limpa os campos span e contador para gerar uma nova frase
 function limparCarta () {
@@ -56,9 +58,17 @@ function contadorPalavras() {
   let contador = span.length;
   pContador.innerHTML = contador;
 }
-// Adiciona classe as palavras
+// Adiciona classe as palavras aleatoriamente
 function addClass() {
   let span = document.querySelectorAll('#span');
-  console.log(span);
+  let arrayClass = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
+
+  for (let i = 0; i < span.length; i += 1) {
+    let randomNumber1 = Math.floor(Math.random() * 10);
+    let randomNumber2 = Math.floor(Math.random() * 10);
+    let randomNumber3 = Math.floor(Math.random() * 10);
+    span[i].className = `${arrayClass[randomNumber1]} ${arrayClass[randomNumber2]} ${arrayClass[randomNumber3]}`;
+  }
 }
 btnCriarCarta.addEventListener('click', limparCarta);
+p.addEventListener('click', addClass);
