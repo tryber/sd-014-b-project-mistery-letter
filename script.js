@@ -66,7 +66,7 @@ function rotationClass() {
 criarCarta.addEventListener('click', rotationClass);
 
 function slopeClass() {
-  let span = document.querySelectorAll('span');
+  const span = document.querySelectorAll('span');
   for (let index of span) {
     index.classList.add(slope[Math.floor(Math.random() * 2)]);
   }
@@ -75,10 +75,11 @@ function slopeClass() {
 criarCarta.addEventListener('click', slopeClass);
 
 function numberOfWords() {
-  let contador = document.querySelector('#carta-contador')
-  let span = document.querySelectorAll('span');
-  let number = parseInt(span.length);
-  return contador.innerHTML = number;
+  const contador = document.querySelector('#carta-contador');
+  const span = document.querySelectorAll('span');
+  const number = parseInt(span.length, 10);
+  contador.innerHTML = number;
+  return contador;
 }
 
 criarCarta.addEventListener('click', numberOfWords);
